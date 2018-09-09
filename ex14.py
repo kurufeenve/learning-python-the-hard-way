@@ -1,6 +1,11 @@
+import sys
 from sys import argv
 
-script, user_name = argv
+try:
+	script, user_name = argv
+except:
+	sys.exit("Please, enter only your name after the name of the program.")
+
 prompt = '> '
 a = "a "
 an = "an "
@@ -27,5 +32,8 @@ print(f"""
 Alright, so you said {likes} about liking me.
 You live in {lives}. Not sure where that is.
 And you have {computer} computer. Nice.
-Now I will find you and kill you :)
 """)
+
+if likes == 'no' or likes == 'No' or\
+likes == 'NO' or likes == 'nO':
+	print("Now I will find you and kill you :)")
